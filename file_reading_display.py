@@ -1,11 +1,7 @@
-import csv
 
-datafilename = 'testfile.csv'
-d = '\t'
-f = open(datafilename,'r')
-
-reader = csv.reader(f,delimiter=d)
-ncol = len(next(reader)) # Read first line and count columns
-f.seek(0)              # go back to beginning of file
-for row in reader:
-    pass #do stuff
+with open('./testfile.csv', 'r') as csv: #open the csv file 
+     first_line = csv.readline()   #read lines 
+     data = csv.readlines()
+tot_col = first_line.count(',') + 1
+print(tot_col)
+print (data)
